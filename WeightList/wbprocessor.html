@@ -1,0 +1,312 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<script   src="http://code.jquery.com/jquery-3.2.1.slim.min.js"   integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="   crossorigin="anonymous"></script>
+        <script type="text/javascript">
+
+			var isIPhone = navigator.userAgent.indexOf("iPhone") != -1
+
+			print = console.log
+			var _idcounter = 0
+			var getId = function () {
+			    return "elem" + _idcounter++;
+			};
+
+			class ViewNode {
+			    constructor(id, node, type) {
+			        this.dom = node
+			        this.id = id
+			        this.type = type
+			        this.blur = false
+			        this.children = []
+			    }
+			}
+
+
+
+			class LayoutEngine {
+			    constructor() {
+			        this.modes = []
+        
+        
+			    }
+    
+			    colorToArray(color) {
+			        var vals = color.slice(4,-1).split(",")
+			        return vals.map((k,v) => {return parseInt(k.trim())})
+			    }
+			    getViewInfo(view) {
+			        var $el = $(view)
+			        var bgColor = $el.css("background-color")
+			        if(bgColor != "") {
+            
+			        }
+			        this.colorToArray($el.css("background-color"))
+			        var rect = view.getBoundingClientRect()
+			        var info = {
+			        frame: {
+			        x: rect.x,
+			        y: rect.y,
+			        width: $el.width(),
+			        height: $el.height()
+			        },
+			        backgroundImage: $el.css("background-image").slice(4,-1),
+			        backgroundColor: [0,0,0],
+			        effects: $el.css("filter"),
+			        cornerRadius: parseInt($el.css("border-radius").replace("px","")),
+			        opacity: parseFloat($el.css("opacity"))
+			        }
+			        console.log(info)
+			        return info
+			    }
+			    updateViews() {
+			        var frames = {}
+			        for(var k in this.flatmap) {
+			            var view = this.flatmap[k].dom
+			            try {
+			                frames[k] = this.getViewInfo(view)
+			            } catch(e) {
+                
+			            }
+			        }
+			        return frames
+			    }
+			    sendViews(layout_dict) {
+			        print(JSON.stringify(layout_dict))
+			        if(window.layoutengine != null) {
+			            layoutengine.updateWithJson(JSON.stringify(layout_dict))
+			        }
+			    }
+			    registerNode(pre, node, type) {
+			        var guid = getId()
+			        var path = pre + "/" + node.id
+			        var vdom = new ViewNode(path, node, type)
+			        this.flatmap[path] = vdom
+			        var doBlur = node.getAttribute("blur")
+			        if(doBlur == 1) {
+			            vdom.blur = true
+			        }
+			        // node.setAttribute("clbipath", path)
+			        // node.setAttribute("guid", guid)
+			        return vdom
+			    }
+			    getType(node) {
+			        for(var k in this.viewmap) {
+			            if(node.tagName == k) return this.viewmap[k]
+			                }
+			        return null
+			    }
+			    traverseH(node, vdom) {
+			        var self = this
+			        node.childNodes.forEach((n) => {
+			                                var isView = false
+			                                var nview = vdom
+			                                var type = self.getType(n)
+			                                if(type != null) {
+			                                // debugger
+			                                isView = true;
+			                                var path = vdom.id + "/" + n.id
+			                                nview = self.registerNode(vdom.id, n, type)
+			                                try {
+			                                vdom.children.push(nview)
+			                                } catch(e) {
+                                
+			                                }
+			                                }
+                                
+			                                if(n.hasChildNodes()) {
+			                                self.traverseH(n, nview)
+			                                }
+                                
+			                                })
+        
+			    }
+			    buildHierarchy(root, viewmap) {
+			        var self = this;
+			        this.viewmap = {}
+			        for(var k in viewmap) {
+			            this.viewmap[k.toUpperCase()] = viewmap[k]
+			        }
+			        this.flatmap = {}
+			        var type = self.getType(root)
+			        var vdom = this.registerNode("", root, type)
+			        this.viewhier = vdom
+			        self.traverseH(root, vdom)
+			        return vdom
+			    }
+			}
+
+			var engine = new LayoutEngine()
+
+			function getLayoutModes() {
+			    return engine.modes
+			}
+			function getAllModes(jsencoded_options) {
+			    var options = JSON.parse(jsencoded_options)
+			    window.seth_options = options
+			    var root = document.getElementById(options.root)
+			    var viewmap = options.views
+			    engine.modes = options.modes
+			    var modes = getLayoutModes()
+			    var hierarchy = engine.buildHierarchy(root, viewmap)
+			    var promises = []
+			    var layout_dict = {
+			    controller: root.getAttribute("vc"),
+			    hierarchy: hierarchy,
+			    modes: {}
+			    }
+    
+			    function f1(key) {
+			        return new Promise((res, rej) => {
+			                           var value = engine.modes[key]
+			                           location.hash = value
+			                           setTimeout(() => {
+			                                      var l = engine.updateViews()
+			                                      layout_dict.modes[key] = l
+			                                      setTimeout(() => {
+			                                                 res(l)
+			                                                 }, 100)
+			                                      }, 100)
+			                           })
+			    }
+			    var keys = Object.keys(modes)
+			    let promiseChain = keys.reduce((start, next) => {
+			                                   return start.then(() => f1(next));
+			                                   }, Promise.resolve());
+			    promiseChain.then(() => {
+			                      print(layout_dict)
+			                      engine.sendViews(layout_dict)
+			                      })
+			}
+
+		
+		</script>   
+		<script>
+			if(!isIPhone) {
+				setTimeout(() => {
+					var options = {
+						views: {
+			                "statsview": "StatsView",
+			                "labelview": "LabelView",
+			                "chartview": "ChartView",
+			                "uiview": "TopView",
+			                "slideview": "SlideView"
+						},
+						root: "testview",
+			            "modes": {
+			                "initial": "#initial",
+			                // "initial.hidden": "#initial.hidden",
+			                // "second": "#second"
+			            }
+					}
+					getAllModes(JSON.stringify(options))
+				}, 2000)
+			}
+		</script>
+    </head>
+    <body style="margin:0px;margin:0px;width:100%;height:100vh">
+ 
+        <style>
+            uiview {
+				background:red;
+				display: block;
+/*				border-radius:10px;*/
+				padding:0px;
+				margin:0px;
+            }
+			.full {
+                width:100vw;
+                height:100vh;		
+			}
+			.blur {
+				filter:blur(10px);
+			}
+			#testview {
+				background-image:url(https://lumiere-a.akamaihd.net/v1/images/07ff8e314e2798d32bfc8c39f82a9601677de34c.jpeg);
+			}
+			labelview {
+				display:block;
+				position:relative;
+				margin:3px;
+				border-radius:20px;
+				border:solid 1px white;
+				
+			}
+			statsview {
+				display:block;
+				position:relative;
+				margin:3px;
+				border-radius:20px;
+				border:solid 1px white;
+			}
+			chartview {
+				display:block;
+				position:relative;
+				margin:3px;
+				border-radius:20px;
+				border:solid 1px white;
+			}
+			
+
+			#description {
+				height:128px;
+			}
+			#seth {
+				height:192px;
+				background:blue;
+/*				filter:blur(20px);*/
+			}
+			#josh {
+				height:128px;
+			}
+			#header {
+				position:absolute;
+				top:-100px;
+				height:128px;
+				width:100%;
+			}
+			.firstposition {
+			}
+			.secondPosition #testview {
+				position:absolute;
+				top:100px;
+			}
+        </style>
+		<template>
+			<browser stream-id="$user/$app/entries" focus-id="__LATEST">
+			</browser>
+		</template>
+        <uiview class="full" vc="WeightListDetailViewController" id="testview" stream-id="$user/$app/entries" focus-id="__LATEST">
+        	<statsview id="header" blur="1"></statsview>
+        	<slideview class="full" style="position:absolute;top:100px" id="detailpanel">
+				<labelview id="description" blur="0"></labelview>
+				<div id="slide" style="height:128px"></div>
+				<chartview id="seth" blur="1" (click)="tap()"></chartview>
+	        	<statsview id="josh" blur="1"></statsview>
+			</slideview>
+			
+        </uiview>
+
+		<script>
+			class App {
+				constructor() {
+					window.onhashchange = (event) => {
+						var hash = location.hash;
+						var $el = $("#testview")
+						switch(hash) {
+							case "#initial":
+								$el[0].className = "firstPosition"
+								break;
+							// case "#second":
+							// 	$el[0].className = "secondPosition"
+							// 	break;
+							default:
+								break
+						}
+					}
+				}
+			}
+			var app = new App()
+		</script>
+    </body>
+</html>

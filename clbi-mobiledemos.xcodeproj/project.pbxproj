@@ -7,14 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0330474207D659B1900A790E /* Pods_WeightList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39D0CBC85B77923E910A2CE /* Pods_WeightList.framework */; };
+		2423E1671F3BB2AC00ABBD8C /* openframe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CDFBC71F3B9C9800ABBD8C /* openframe.framework */; };
+		2423E16C1F3BB2CB00ABBD8C /* openframe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CDFBC71F3B9C9800ABBD8C /* openframe.framework */; };
+		2423E16D1F3BB2CB00ABBD8C /* openframe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24CDFBC71F3B9C9800ABBD8C /* openframe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2454472E1F3B99BE00ABBD8C /* WLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2454472D1F3B99BE00ABBD8C /* WLAppDelegate.swift */; };
 		245447301F3B99BE00ABBD8C /* WLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2454472F1F3B99BE00ABBD8C /* WLViewController.swift */; };
 		245447331F3B99BE00ABBD8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245447311F3B99BE00ABBD8C /* Main.storyboard */; };
 		245447351F3B99BE00ABBD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 245447341F3B99BE00ABBD8C /* Assets.xcassets */; };
 		245447381F3B99BE00ABBD8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245447361F3B99BE00ABBD8C /* LaunchScreen.storyboard */; };
+		24A1096A1F3BB74800ABBD8C /* wbprocessor.html in Resources */ = {isa = PBXBuildFile; fileRef = 24A109691F3BB74800ABBD8C /* wbprocessor.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2423E1691F3BB2AC00ABBD8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CDFBC21F3B9C9700ABBD8C /* openframe.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2454470D1F3B96AF00ABBD8C;
+			remoteInfo = openframe;
+		};
+		2423E16E1F3BB2CB00ABBD8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24CDFBC21F3B9C9700ABBD8C /* openframe.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2454470D1F3B96AF00ABBD8C;
+			remoteInfo = openframe;
+		};
 		24CDFBC61F3B9C9800ABBD8C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24CDFBC21F3B9C9700ABBD8C /* openframe.xcodeproj */;
@@ -22,14 +41,21 @@
 			remoteGlobalIDString = 2454470E1F3B96AF00ABBD8C;
 			remoteInfo = openframe;
 		};
-		24CDFBC81F3B9CA700ABBD8C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 24CDFBC21F3B9C9700ABBD8C /* openframe.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 2454470D1F3B96AF00ABBD8C;
-			remoteInfo = openframe;
-		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2423E1701F3BB2CB00ABBD8C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2423E16D1F3BB2CB00ABBD8C /* openframe.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2454472A1F3B99BE00ABBD8C /* WeightList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,7 +65,13 @@
 		245447341F3B99BE00ABBD8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		245447371F3B99BE00ABBD8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		245447391F3B99BE00ABBD8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		245B3B0A1F3CEC9000ABBD8C /* wib_browser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wib_browser.json; sourceTree = "<group>"; };
+		245B3B0B1F3CEC9000ABBD8C /* wib_detail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wib_detail.json; sourceTree = "<group>"; };
+		24976DB2432CAF82F2133D6B /* Pods-WeightList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeightList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeightList/Pods-WeightList.debug.xcconfig"; sourceTree = "<group>"; };
+		24A109691F3BB74800ABBD8C /* wbprocessor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = wbprocessor.html; sourceTree = "<group>"; };
 		24CDFBC21F3B9C9700ABBD8C /* openframe.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openframe.xcodeproj; path = "../clbi-openframe/openframe/openframe.xcodeproj"; sourceTree = "<group>"; };
+		555D7FE5FD9851E0ACE284A5 /* Pods-WeightList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeightList.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeightList/Pods-WeightList.release.xcconfig"; sourceTree = "<group>"; };
+		C39D0CBC85B77923E910A2CE /* Pods_WeightList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeightList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2423E16C1F3BB2CB00ABBD8C /* openframe.framework in Frameworks */,
+				2423E1671F3BB2AC00ABBD8C /* openframe.framework in Frameworks */,
+				0330474207D659B1900A790E /* Pods_WeightList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +94,8 @@
 				24CDFBC21F3B9C9700ABBD8C /* openframe.xcodeproj */,
 				2454472C1F3B99BE00ABBD8C /* WeightList */,
 				2454472B1F3B99BE00ABBD8C /* Products */,
+				DD29C6B713442B58837BDDB0 /* Pods */,
+				8B18E584E36BB3DDE4155A20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +110,9 @@
 		2454472C1F3B99BE00ABBD8C /* WeightList */ = {
 			isa = PBXGroup;
 			children = (
+				245B3B0A1F3CEC9000ABBD8C /* wib_browser.json */,
+				245B3B0B1F3CEC9000ABBD8C /* wib_detail.json */,
+				24A109691F3BB74800ABBD8C /* wbprocessor.html */,
 				2454472D1F3B99BE00ABBD8C /* WLAppDelegate.swift */,
 				2454472F1F3B99BE00ABBD8C /* WLViewController.swift */,
 				245447311F3B99BE00ABBD8C /* Main.storyboard */,
@@ -91,6 +131,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8B18E584E36BB3DDE4155A20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C39D0CBC85B77923E910A2CE /* Pods_WeightList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD29C6B713442B58837BDDB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				24976DB2432CAF82F2133D6B /* Pods-WeightList.debug.xcconfig */,
+				555D7FE5FD9851E0ACE284A5 /* Pods-WeightList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,14 +155,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2454473C1F3B99BE00ABBD8C /* Build configuration list for PBXNativeTarget "WeightList" */;
 			buildPhases = (
+				F0B29C44FAAB4560F390264E /* [CP] Check Pods Manifest.lock */,
 				245447261F3B99BE00ABBD8C /* Sources */,
 				245447271F3B99BE00ABBD8C /* Frameworks */,
 				245447281F3B99BE00ABBD8C /* Resources */,
+				2423E1701F3BB2CB00ABBD8C /* Embed Frameworks */,
+				B44C1403375264B8397F2052 /* [CP] Embed Pods Frameworks */,
+				2119285BAFDC8DB9536F194F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				24CDFBC91F3B9CA700ABBD8C /* PBXTargetDependency */,
+				2423E16A1F3BB2AC00ABBD8C /* PBXTargetDependency */,
+				2423E16F1F3BB2CB00ABBD8C /* PBXTargetDependency */,
 			);
 			name = WeightList;
 			productName = WeightList;
@@ -166,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24A1096A1F3BB74800ABBD8C /* wbprocessor.html in Resources */,
 				245447381F3B99BE00ABBD8C /* LaunchScreen.storyboard in Resources */,
 				245447351F3B99BE00ABBD8C /* Assets.xcassets in Resources */,
 				245447331F3B99BE00ABBD8C /* Main.storyboard in Resources */,
@@ -173,6 +236,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2119285BAFDC8DB9536F194F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeightList/Pods-WeightList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B44C1403375264B8397F2052 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeightList/Pods-WeightList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0B29C44FAAB4560F390264E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		245447261F3B99BE00ABBD8C /* Sources */ = {
@@ -187,10 +298,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		24CDFBC91F3B9CA700ABBD8C /* PBXTargetDependency */ = {
+		2423E16A1F3BB2AC00ABBD8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = openframe;
-			targetProxy = 24CDFBC81F3B9CA700ABBD8C /* PBXContainerItemProxy */;
+			targetProxy = 2423E1691F3BB2AC00ABBD8C /* PBXContainerItemProxy */;
+		};
+		2423E16F1F3BB2CB00ABBD8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = openframe;
+			targetProxy = 2423E16E1F3BB2CB00ABBD8C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -323,7 +439,9 @@
 		};
 		2454473D1F3B99BE00ABBD8C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24976DB2432CAF82F2133D6B /* Pods-WeightList.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GD8SQHBYA3;
 				INFOPLIST_FILE = WeightList/Info.plist;
@@ -337,7 +455,9 @@
 		};
 		2454473E1F3B99BE00ABBD8C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 555D7FE5FD9851E0ACE284A5 /* Pods-WeightList.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GD8SQHBYA3;
 				INFOPLIST_FILE = WeightList/Info.plist;
