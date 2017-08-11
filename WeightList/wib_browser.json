@@ -1,22 +1,22 @@
 {
-    "controller": "BrowserStreamVC",
+    "controller": "openframe.BrowserStreamVC",
     "hierarchy": {
         "dom": {},
         "id": "/testview",
-        "type": "TopView",
+        "type": "openframe.TopView",
         "blur": false,
         "datasource": null,
         "children": [
                      {
                          "dom": {},
                          "id": "/testview/browser",
-                         "type": "ParallaxBrowserView",
+                         "type": "openframe.ParallaxBrowserView",
                          "blur": false,
                          "children": [
                              {
                                 "dom": {},
                                 "id": "/testview/browser/$prototypecell",
-                                "type": "ParallaxBrowserViewCell",
+                                "type": "openframe.ParallaxBrowserViewCell",
                                 "blur": false,
                                 "children": [],
                              }

@@ -8,26 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		0330474207D659B1900A790E /* Pods_WeightList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39D0CBC85B77923E910A2CE /* Pods_WeightList.framework */; };
-		2423E1671F3BB2AC00ABBD8C /* openframe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CDFBC71F3B9C9800ABBD8C /* openframe.framework */; };
-		2423E16C1F3BB2CB00ABBD8C /* openframe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CDFBC71F3B9C9800ABBD8C /* openframe.framework */; };
-		2423E16D1F3BB2CB00ABBD8C /* openframe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24CDFBC71F3B9C9800ABBD8C /* openframe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2410864B1F3CFE3800ABBD8C /* wib_browser.json in Resources */ = {isa = PBXBuildFile; fileRef = 245B3B0A1F3CEC9000ABBD8C /* wib_browser.json */; };
+		2410864C1F3CFE3B00ABBD8C /* wib_detail.json in Resources */ = {isa = PBXBuildFile; fileRef = 245B3B0B1F3CEC9000ABBD8C /* wib_detail.json */; };
 		2454472E1F3B99BE00ABBD8C /* WLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2454472D1F3B99BE00ABBD8C /* WLAppDelegate.swift */; };
 		245447301F3B99BE00ABBD8C /* WLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2454472F1F3B99BE00ABBD8C /* WLViewController.swift */; };
 		245447331F3B99BE00ABBD8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245447311F3B99BE00ABBD8C /* Main.storyboard */; };
 		245447351F3B99BE00ABBD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 245447341F3B99BE00ABBD8C /* Assets.xcassets */; };
 		245447381F3B99BE00ABBD8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245447361F3B99BE00ABBD8C /* LaunchScreen.storyboard */; };
+		24620E8C1F3E538000ABBD8C /* openframe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CDFBC71F3B9C9800ABBD8C /* openframe.framework */; };
+		24620E8D1F3E538000ABBD8C /* openframe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24CDFBC71F3B9C9800ABBD8C /* openframe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		24A1096A1F3BB74800ABBD8C /* wbprocessor.html in Resources */ = {isa = PBXBuildFile; fileRef = 24A109691F3BB74800ABBD8C /* wbprocessor.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2423E1691F3BB2AC00ABBD8C /* PBXContainerItemProxy */ = {
+		2423E16E1F3BB2CB00ABBD8C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24CDFBC21F3B9C9700ABBD8C /* openframe.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 2454470D1F3B96AF00ABBD8C;
 			remoteInfo = openframe;
 		};
-		2423E16E1F3BB2CB00ABBD8C /* PBXContainerItemProxy */ = {
+		24620E8E1F3E538000ABBD8C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 24CDFBC21F3B9C9700ABBD8C /* openframe.xcodeproj */;
 			proxyType = 1;
@@ -44,13 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2423E1701F3BB2CB00ABBD8C /* Embed Frameworks */ = {
+		24620E901F3E538000ABBD8C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2423E16D1F3BB2CB00ABBD8C /* openframe.framework in Embed Frameworks */,
+				24620E8D1F3E538000ABBD8C /* openframe.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,8 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2423E16C1F3BB2CB00ABBD8C /* openframe.framework in Frameworks */,
-				2423E1671F3BB2AC00ABBD8C /* openframe.framework in Frameworks */,
+				24620E8C1F3E538000ABBD8C /* openframe.framework in Frameworks */,
 				0330474207D659B1900A790E /* Pods_WeightList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,15 +159,15 @@
 				245447261F3B99BE00ABBD8C /* Sources */,
 				245447271F3B99BE00ABBD8C /* Frameworks */,
 				245447281F3B99BE00ABBD8C /* Resources */,
-				2423E1701F3BB2CB00ABBD8C /* Embed Frameworks */,
 				B44C1403375264B8397F2052 /* [CP] Embed Pods Frameworks */,
 				2119285BAFDC8DB9536F194F /* [CP] Copy Pods Resources */,
+				24620E901F3E538000ABBD8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2423E16A1F3BB2AC00ABBD8C /* PBXTargetDependency */,
 				2423E16F1F3BB2CB00ABBD8C /* PBXTargetDependency */,
+				24620E8F1F3E538000ABBD8C /* PBXTargetDependency */,
 			);
 			name = WeightList;
 			productName = WeightList;
@@ -229,6 +229,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				24A1096A1F3BB74800ABBD8C /* wbprocessor.html in Resources */,
+				2410864C1F3CFE3B00ABBD8C /* wib_detail.json in Resources */,
+				2410864B1F3CFE3800ABBD8C /* wib_browser.json in Resources */,
 				245447381F3B99BE00ABBD8C /* LaunchScreen.storyboard in Resources */,
 				245447351F3B99BE00ABBD8C /* Assets.xcassets in Resources */,
 				245447331F3B99BE00ABBD8C /* Main.storyboard in Resources */,
@@ -298,15 +300,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2423E16A1F3BB2AC00ABBD8C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = openframe;
-			targetProxy = 2423E1691F3BB2AC00ABBD8C /* PBXContainerItemProxy */;
-		};
 		2423E16F1F3BB2CB00ABBD8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = openframe;
 			targetProxy = 2423E16E1F3BB2CB00ABBD8C /* PBXContainerItemProxy */;
+		};
+		24620E8F1F3E538000ABBD8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = openframe;
+			targetProxy = 24620E8E1F3E538000ABBD8C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
