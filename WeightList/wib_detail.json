@@ -1,169 +1,66 @@
 {
-    "controller": "WeightListDetailViewController",
+    "controller": "openframe.SwipeDetailVC",
     "hierarchy": {
         "dom": {},
-        "id": "/testview",
-        "type": "TopView",
+        "id": "/swipeview",
+        "type": "openframe.SlideView",
         "blur": false,
         "datasource": "browserstreamid",
+        "selector": "browsercurrentid",
         "children": [
                      {
                          "dom": {},
-                         "id": "/testview/header",
-                         "type": "StatsView",
+                         "id": "/swipeview/header",
+                         "type": "openframe.StatsView",
+                         "datasource": "$current.name",
                          "blur": true,
-                         "children": [],
-                         "datasource": "detailheader"
+                         "children": []
                      },
                      {
                      "dom": {},
-                     "id": "/testview/detailpanel",
-                     "type": "SlideView",
+                     "id": "/swipeview/detailpanel",
+                     "type": "openframe.TopView",
                      "blur": false,
-                     "datasource": "currentpostid",
                      "children": [
                               {
                                   "dom": {},
-                                  "id": "/testview/detailpanel/description",
-                                  "type": "LabelView",
+                                  "id": "/swipeview/detailpanel/description",
+                                  "type": "openframe.LabelView",
+                                  "datasource": "$current.description",
                                   "blur": false,
-                                  "children": [],
-                                  "datasource": ".description"
+                                  "children": []
                                   },
                                   {
                                   "dom": {},
-                                  "id": "/testview/detailpanel/seth",
-                                  "type": "ChartView",
+                                  "id": "/swipeview/detailpanel/seth",
+                                  "type": "openframe.ChartView",
+                                  "datasource": "$current.histogram",
                                   "blur": true,
-                                  "children": [],
-                                  "datasource": ".histogram"
+                                  "children": []
                                   },
                                   {
                                   "dom": {},
-                                  "id": "/testview/detailpanel/josh",
-                                  "type": "StatsView",
+                                  "id": "/swipeview/detailpanel/josh",
+                                  "type": "openframe.StatsView",
+                                  "datasource": "$current.description",
                                   "blur": true,
-                                  "children": [],
-                                  "datasource": ".comment"
+                                  "children": []
                                   }
                                   ]
                          }
                      ]
     },
     "modes": {
-        "second": {
-            "/testview": {
-                "frame": {
-                    "x": 0,
-                    "y": 0,
-                    "width": 414,
-                    "height": 736
-                },
-                "backgroundImage": "https://lumiere-a.akamaihd.net/v1/images/07ff8e314e2798d32bfc8c39f82a9601677de34c.jpeg",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 0,
-                "opacity": 1
-            },
-            "/testview/header": {
-                "frame": {
-                    "x": 3,
-                    "y": -97,
-                    "width": 414,
-                    "height": 128
-                },
-                "backgroundImage": "",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 20,
-                "opacity": 1
-            },
-            "/testview/detailpanel": {
-                "frame": {
-                    "x": 0,
-                    "y": 100,
-                    "width": 414,
-                    "height": 736
-                },
-                "backgroundImage": "",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 0,
-                "opacity": 1
-            },
-            "/testview/detailpanel/description": {
-                "frame": {
-                    "x": 3,
-                    "y": 103,
-                    "width": 406,
-                    "height": 128
-                },
-                "backgroundImage": "",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 20,
-                "opacity": 1
-            },
-            "/testview/detailpanel/seth": {
-                "frame": {
-                    "x": 3,
-                    "y": 367,
-                    "width": 406,
-                    "height": 192
-                },
-                "backgroundImage": "",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 20,
-                "opacity": 1
-            },
-            "/testview/detailpanel/josh": {
-                "frame": {
-                    "x": 3,
-                    "y": 564,
-                    "width": 406,
-                    "height": 128
-                },
-                "backgroundImage": "",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 20,
-                "opacity": 1
-            }
-        },
+
         "initial": {
-            "/testview": {
+            "/swipeview": {
                 "frame": {
                     "x": 0,
                     "y": 0,
                     "width": 414,
                     "height": 736
                 },
-                "backgroundImage": "https://lumiere-a.akamaihd.net/v1/images/07ff8e314e2798d32bfc8c39f82a9601677de34c.jpeg",
+                "backgroundImage": "",
                 "backgroundColor": [
                                     0,
                                     0,
@@ -173,10 +70,10 @@
                 "cornerRadius": 0,
                 "opacity": 1
             },
-            "/testview/header": {
+            "/swipeview/header": {
                 "frame": {
                     "x": 3,
-                    "y": -97,
+                    "y": -47,
                     "width": 414,
                     "height": 128
                 },
@@ -190,7 +87,7 @@
                 "cornerRadius": 20,
                 "opacity": 1
             },
-            "/testview/detailpanel": {
+            "/swipeview/detailpanel": {
                 "frame": {
                     "x": 0,
                     "y": 100,
@@ -207,7 +104,7 @@
                 "cornerRadius": 0,
                 "opacity": 1
             },
-            "/testview/detailpanel/description": {
+            "/swipeview/detailpanel/description": {
                 "frame": {
                     "x": 3,
                     "y": 103,
@@ -224,7 +121,7 @@
                 "cornerRadius": 20,
                 "opacity": 1
             },
-            "/testview/detailpanel/seth": {
+            "/swipeview/detailpanel/seth": {
                 "frame": {
                     "x": 3,
                     "y": 367,
@@ -241,111 +138,7 @@
                 "cornerRadius": 20,
                 "opacity": 1
             },
-            "/testview/detailpanel/josh": {
-                "frame": {
-                    "x": 3,
-                    "y": 564,
-                    "width": 406,
-                    "height": 128
-                },
-                "backgroundImage": "",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 20,
-                "opacity": 1
-            }
-        },
-        "initial.hidden": {
-            "/testview": {
-                "frame": {
-                    "x": 0,
-                    "y": 0,
-                    "width": 414,
-                    "height": 736
-                },
-                "backgroundImage": "https://lumiere-a.akamaihd.net/v1/images/07ff8e314e2798d32bfc8c39f82a9601677de34c.jpeg",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 0,
-                "opacity": 1
-            },
-            "/testview/header": {
-                "frame": {
-                    "x": 3,
-                    "y": -97,
-                    "width": 414,
-                    "height": 128
-                },
-                "backgroundImage": "",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 20,
-                "opacity": 1
-            },
-            "/testview/detailpanel": {
-                "frame": {
-                    "x": 0,
-                    "y": 100,
-                    "width": 414,
-                    "height": 736
-                },
-                "backgroundImage": "",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 0,
-                "opacity": 1
-            },
-            "/testview/detailpanel/description": {
-                "frame": {
-                    "x": 3,
-                    "y": 103,
-                    "width": 406,
-                    "height": 128
-                },
-                "backgroundImage": "",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 20,
-                "opacity": 1
-            },
-            "/testview/detailpanel/seth": {
-                "frame": {
-                    "x": 3,
-                    "y": 367,
-                    "width": 406,
-                    "height": 192
-                },
-                "backgroundImage": "",
-                "backgroundColor": [
-                                    0,
-                                    0,
-                                    0
-                                    ],
-                "effects": "none",
-                "cornerRadius": 20,
-                "opacity": 1
-            },
-            "/testview/detailpanel/josh": {
+            "/swipeview/detailpanel/josh": {
                 "frame": {
                     "x": 3,
                     "y": 564,

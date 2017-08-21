@@ -1,0 +1,43 @@
+//
+//  SampleHandler.swift
+//  TesterBroadcast
+//
+//  Created by seth piezas on 8/15/17.
+//  Copyright © 2017 seth piezas. All rights reserved.
+//
+
+import ReplayKit
+
+class SampleHandler: RPBroadcastSampleHandler {
+
+    override func broadcastStarted(withSetupInfo setupInfo: [String : NSObject]?) {
+        // User has requested to start the broadcast. Setup info from the UI extension can be supplied but optional.
+        print(setupInfo)
+    }
+    
+    override func broadcastPaused() {
+        // User has requested to pause the broadcast. Samples will stop being delivered.
+    }
+    
+    override func broadcastResumed() {
+        // User has requested to resume the broadcast. Samples delivery will resume.
+    }
+    
+    override func broadcastFinished() {
+        // User has requested to finish the broadcast.
+    }
+    
+    override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBufferType: RPSampleBufferType) {
+        switch sampleBufferType {
+            case RPSampleBufferType.video:
+                // Handle video sample buffer
+                break
+            case RPSampleBufferType.audioApp:
+                // Handle audio sample buffer for app audio
+                break
+            case RPSampleBufferType.audioMic:
+                // Handle audio sample buffer for mic audio
+                break
+        }
+    }
+}
